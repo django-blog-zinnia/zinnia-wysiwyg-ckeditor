@@ -32,5 +32,5 @@ setup(
     license=zinnia_ckeditor.__license__,
     include_package_data=True,
     zip_safe=False,
-    install_requires=['django-ckeditor']
+    install_requires=['django-ckeditor-updated']
 )
