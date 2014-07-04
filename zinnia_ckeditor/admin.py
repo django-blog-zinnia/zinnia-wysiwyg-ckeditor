@@ -1,6 +1,7 @@
 """EntryAdmin for zinnia-ckeditor"""
 from django import forms
 from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 
 from ckeditor.widgets import CKEditorWidget
 
@@ -13,7 +14,9 @@ class EntryAdminCKEditorForm(EntryAdminForm):
     """
     Define the CKEditor widget for the content field.
     """
-    content = forms.CharField(widget=CKEditorWidget())
+    content = forms.CharField(
+        label=_('Content'), required=False,
+        widget=CKEditorWidget(config_name='zinnia_content'))
 
 
 class EntryAdminCKEditorMixin(object):
