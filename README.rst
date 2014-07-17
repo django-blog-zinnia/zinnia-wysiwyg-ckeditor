@@ -19,5 +19,40 @@ Installation
 
 You are done !
 
+Configuration
+=============
+
+You can customize the CKEditor instance by defining a ``zinnia-content``
+configuration into the ``CKEDITOR_CONFIGS`` setting.
+
+If the ``zinnia-content`` configuration is not found, the ``default``
+configuration will be used.
+
+Example of configuration: ::
+
+  CKEDITOR_CONFIGS = {
+      'default': {
+          'toolbar': 'Full',
+      },
+      'zinnia-content': {
+          'toolbar_Zinnia': [
+              ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],
+              ['Undo', 'Redo'],
+              ['Scayt'],
+              ['Link', 'Unlink', 'Anchor'],
+              ['Image', 'Table', 'HorizontalRule', 'SpecialChar'],
+              ['Source'],
+              ['Maximize'],
+              '/',
+              ['Bold', 'Italic', 'Underline', 'Strike',
+               'Subscript', 'Superscript', '-', 'RemoveFormat'],
+              ['NumberedList', 'BulletedList', '-',
+               'Outdent', 'Indent', '-', 'Blockquote'],
+              ['Styles', 'Format'],
+          ],
+          'toolbar': 'Zinnia',
+      },
+  }
+
 .. _CKEditor: http://ckeditor.com/
 .. _django-ckeditor: https://github.com/shaunsephton/django-ckeditor/
