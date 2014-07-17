@@ -16,7 +16,7 @@ class EntryAdminCKEditorForm(EntryAdminForm):
     """
     content = forms.CharField(
         label=_('Content'), required=False,
-        widget=CKEditorWidget(config_name='zinnia_content'))
+        widget=CKEditorWidget(config_name='zinnia-content'))
 
 
 class EntryAdminCKEditorMixin(object):
