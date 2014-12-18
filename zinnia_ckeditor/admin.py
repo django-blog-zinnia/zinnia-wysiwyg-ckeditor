@@ -9,6 +9,7 @@ from ckeditor.widgets import CKEditorWidget
 from zinnia.models import Entry
 from zinnia.admin.entry import EntryAdmin
 from zinnia.admin.forms import EntryAdminForm
+from zinnia.settings import ENTRY_BASE_MODEL
 
 
 CONFIG_NAME = 'zinnia-content'
@@ -40,5 +41,7 @@ class EntryAdminCKEditor(EntryAdminCKEditorMixin,
     """
     pass
 
-admin.site.unregister(Entry)
-admin.site.register(Entry, EntryAdminCKEditor)
+
+if ENTRY_BASE_MODEL == 'zinnia.models_bases.entry.AbstractEntry':
+    admin.site.unregister(Entry)
+    admin.site.register(Entry, EntryAdminCKEditor)
