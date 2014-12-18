@@ -1,5 +1,5 @@
 """CKEditor for Django-blog-zinnia"""
-__version__ = '1.1'
+__version__ = '1.2'
 __license__ = 'BSD License'
 
 __author__ = 'Fantomas42'
