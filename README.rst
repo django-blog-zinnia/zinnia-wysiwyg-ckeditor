@@ -13,6 +13,8 @@ Installation
   $ pip install zinnia-wysiwyg-ckeditor
 
   `django-ckeditor`_ will also be installed as a dependency.
+  
+* Install and configure django-ckeditor if not already done. 
 
 * Register the ``'zinnia_ckeditor'`` in your ``INSTALLED_APPS`` after the
   ``'zinnia'`` application.

@@ -4,12 +4,15 @@ from django.contrib import admin
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
-from ckeditor.widgets import CKEditorWidget
-
 from zinnia.models import Entry
 from zinnia.admin.entry import EntryAdmin
 from zinnia.admin.forms import EntryAdminForm
 from zinnia.settings import ENTRY_BASE_MODEL
+
+if 'ckeditor_uploader' in settings.INSTALLED_APPS:
+    from ckeditor_uploader.widgets import CKEditorUploadingWidget as CKEditor
+else:
+    from ckeditor.widgets import CKEditorWidget as CKEditor
 
 
 CONFIG_NAME = 'zinnia-content'
@@ -24,7 +27,7 @@ class EntryAdminCKEditorForm(EntryAdminForm):
     """
     content = forms.CharField(
         label=_('Content'), required=False,
-        widget=CKEditorWidget(config_name=CONFIG_NAME))
+        widget=CKEditor(config_name=CONFIG_NAME))
 
 
 class EntryAdminCKEditorMixin(object):
