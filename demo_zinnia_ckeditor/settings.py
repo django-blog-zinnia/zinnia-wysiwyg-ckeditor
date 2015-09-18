@@ -87,6 +87,7 @@ INSTALLED_APPS = (
     'django_comments',
     'mptt',
     'tagging',
+    'ckeditor_uploader',
     'ckeditor',
     'zinnia',
     'zinnia_ckeditor',
